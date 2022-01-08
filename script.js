@@ -30,14 +30,17 @@ function playerPlay() {
 function playRound(ps, cs) {
 
     if (ps === cs) {
-        return 'It\'s a tie!';
+        console.log('It\'s a tie!');
+        return 0;
     }
     else if (ps  === "rock" && cs === "scissor" || ps === "paper" && cs === "rock"
     || ps === "scissor" && cs === "paper"){
-        return `You Win! ${ps} wins over ${cs}`
+        console.log(`You Win! ${ps} wins over ${cs}`);
+        return 1;
     }
     else{
-        return `You Lose! ${cs} wins over ${ps}` 
+        console.log(`You Lose! ${cs} wins over ${ps}`);
+        return -1;
     }
     
 }
@@ -46,7 +49,7 @@ function playRound(ps, cs) {
 
 function game() {
 
-    let table = [];
+    let winner = 0;
 
         for (i = 0; i < 5; i++) {
 
@@ -54,12 +57,17 @@ function game() {
         let cs = computerPlay().toString();
         
 
-        table[i] = playRound(ps, cs);
-
-        console.log(table[i]);
+        winner = winner + playRound(ps, cs);
         }
-        
-        return;
+        if (winner === 0){
+            return "It's a tie!"
+        }
+        else if (winner >= 1) {
+            return "You win!"
+        }
+        else {
+            return "Computer wins! :("
+        }
 }
 
 
