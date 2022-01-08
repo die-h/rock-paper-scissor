@@ -1,9 +1,8 @@
 // This function will randomly choose the computer selection
 
-function computerSelection() {
-    let select = Math.floor(Math.random() * 3);
+function computerPlay() {
 
-    console.log(select);
+    let select = Math.floor(Math.random() * 3);
 
     switch (select) {
         case 0:
@@ -17,5 +16,14 @@ function computerSelection() {
             break;
         default:
     }
-
 }
+// This function will get the player pick
+
+function playerPlay() {
+    let pick = prompt("What's your pick?");
+    return pick.toLowerCase();
+}
+
+
+
+
