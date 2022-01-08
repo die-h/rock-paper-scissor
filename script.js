@@ -15,6 +15,7 @@ function computerPlay() {
             return 'scissor';
             break;
         default:
+            return;
     }
 }
 // This function will get the player pick
@@ -24,6 +25,30 @@ function playerPlay() {
     return pick.toLowerCase();
 }
 
+// This function will play a round of the game
 
+function playRound(playerSelection, computerSelection) {
+
+    p = playerSelection;
+    c = computerSelection;
+
+    console.log(p, c);
+    return;
+}
+
+// This function plays a game of 5 rounds
+
+function game() {
+
+    for (let i = 0; i < 5; i++) {
+
+        let playerSelection = playerPlay();
+        let computerSelection = computerPlay();
+
+        playRound(playerSelection, computerSelection)
+    }
+
+    return;
+}
 
 
